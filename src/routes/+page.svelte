@@ -1,13 +1,39 @@
 <script>
+	// @ts-nocheck
+
 	import Comments from '$lib/components/Comments.svelte';
 	import heroImg from '$lib/assets/heroImg.png';
 	import gif1 from '$lib/assets/gif1.gif';
 	import img1 from '$lib/assets/img1.png';
+	import cliente1 from '$lib/assets/cliente1.png';
+	import cliente2 from '$lib/assets/cliente2.png';
+	import cliente3 from '$lib/assets/cliente3.png';
 	import product from '$lib/assets/produto.jpg';
 
 	import { page } from '$app/stores';
+	import CustomerReview from '$lib/components/CustomerReview.svelte';
 
 	$: trafficSource = $page.url.search;
+
+	const reviews = [
+		{
+			img: cliente1,
+			review:
+				'Inacreditável ! Estes collants permitiram-me conciliar com saias e vestidos no inverno! Eles são muito quentes e a renderização final é muito realista!',
+			name: 'Elsa C.'
+		},
+		{
+			img: cliente2,
+			review: 'Suavidade, calor e espessura estão lá. A aparência também é muito bonita!',
+			name: 'Vitória M.'
+		},
+		{
+			img: cliente3,
+			review:
+				'É muito quente e tem um efeito de pele nua. (transparente apertado) Coloquei 5 estrelas porque é ótimo!',
+			name: 'Anabelle G.'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -114,6 +140,23 @@
 			ajuste que melhor lhes convier.
 		</li>
 	</ul>
+
+	<a href="" class="btn btn-featured">CLIQUE AQUI PARA VERIFICAR DISPONIBILIDADE E PREÇO</a>
+
+	<br />
+	<br />
+
+	<hr />
+	<div class="centered">
+		<h4>99% das mulheres que experimentaram o ComfyPolar recomendam-no aos seus entes queridos!</h4>
+		<span class="quote"><strong>"Suavidade, calor e espessura estão ai!"</strong></span>
+		<span class="italic">escreve Victoria M. nos comentários</span>
+	</div>
+	<hr />
+
+	{#each reviews as review}
+		<CustomerReview img={review.img} review={review.review} name={review.name} />
+	{/each}
 
 	<!-- <p>
 		Tudo começou quando especialistas norte-americanos buscaram alguma solução para reduzir a taxa
@@ -268,6 +311,24 @@
 		strong {
 			font-weight: bold;
 		}
+
+		.italic {
+			font-style: italic;
+		}
+	}
+
+	span {
+		&.quote {
+			display: block;
+			font-weight: bold;
+			font-size: var(--step-1);
+		}
+
+		&.italic {
+			display: block;
+			font-style: italic;
+			margin-top: 0.35em;
+		}
 	}
 
 	h2 {
@@ -281,8 +342,11 @@
 	}
 
 	a.btn {
+		display: block;
+		width: fit-content;
 		background-color: white;
 		border: 1px solid $primaryColor;
+		margin: 0 auto;
 	}
 
 	a.btn__featured {
@@ -314,13 +378,28 @@
 		margin-bottom: 0.5em;
 	}
 
+	.centered {
+		padding: 1em;
+		text-align: center;
+	}
+
+	.centered + hr {
+		margin-bottom: 2rem;
+	}
+
+	h4 {
+		font-weight: bold;
+		font-size: var(--step-2);
+		margin-bottom: 1em;
+	}
+
 	ul.checked {
 		li {
 			margin-top: 1em;
 		}
 
 		li::before {
-			content: "✅ ";
+			content: '✅ ';
 		}
 	}
 
