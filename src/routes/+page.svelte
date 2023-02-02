@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>G8 Saúde - Touca Revolucionária</title>
+	<title>G9 Notícias - Collant Polar</title>
 </svelte:head>
 
 <figure class="wrapper-big">
