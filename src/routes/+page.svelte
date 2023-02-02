@@ -8,10 +8,11 @@
 	import cliente1 from '$lib/assets/cliente1.png';
 	import cliente2 from '$lib/assets/cliente2.png';
 	import cliente3 from '$lib/assets/cliente3.png';
-	import product from '$lib/assets/produto.jpg';
+	import product from '$lib/assets/product.png';
 
 	import { page } from '$app/stores';
 	import CustomerReview from '$lib/components/CustomerReview.svelte';
+	import Question from '$lib/components/Question.svelte';
 
 	$: trafficSource = $page.url.search;
 
@@ -32,6 +33,53 @@
 			review:
 				'É muito quente e tem um efeito de pele nua. (transparente apertado) Coloquei 5 estrelas porque é ótimo!',
 			name: 'Anabelle G.'
+		}
+	];
+
+	const questions = [
+		{
+			question: 'Essas meias são quentes?',
+			answer:
+				'Sim, as meias de lã ComfyPolar para mulher são muito quentes graças ao seu forro de lã grossa. Este forro permite manter a temperatura das pernas no inverno, sendo confortável e fácil de calçar.'
+		},
+
+		{
+			question:
+				'Estas meias podem aliviar dores musculares e inchaços causados ​​pela má circulação sanguínea?',
+			answer:
+				'Sim, as meias de lã femininas ComfyPolar podem ajudar a aliviar a dor muscular e o inchaço causados ​​pela má circulação sanguínea. O forro de lã grosso pode ajudar a manter a temperatura corporal e melhorar a circulação sanguínea.'
+		},
+
+		{
+			question: 'Essas meias são estilosas?',
+			answer:
+				'Sim, estes collants são elegantes graças à sua ilusão de collants pretos transparentes de nylon. Você pode usá-los com uma saia ou um vestido para um look chique e feminino no inverno.'
+		},
+
+		{
+			question: 'Essas meias são fáceis de cuidar?',
+			answer:
+				'Sim, essas meias são fáceis de cuidar. Basta lavar à mão ou à máquina a 30°C e pendurar para secar. Não deformam nem perdem a elasticidade, mesmo após várias lavagens.'
+		},
+		{
+			question: 'As meias de lã ComfyPolar para mulheres estão disponíveis em tamanhos diferentes?',
+			answer:
+				'Sim, as meias de lã ComfyPolar para mulheres estão disponíveis em diferentes tamanhos para se adequarem a diferentes tipos de corpo. Você pode verificar nosso guia de tamanhos para encontrar o tamanho que melhor se adapta a você.'
+		},
+		{
+			question: 'Essas meias são justas?',
+			answer:
+				'Sim, essas meias têm um ajuste confortável para evitar que escorreguem ou caiam enquanto você as usa. No entanto, eles são elásticos o suficiente para proporcionar o máximo de conforto sem serem muito apertados.'
+		},
+		{
+			question: 'Estas meias são adequadas para atividades ao ar livre no inverno?',
+			answer:
+				'Sim, estes collants são adequados para atividades ao ar livre no inverno graças ao seu forro de lã grossa que o mantém aquecido. Eles podem ser usados ​​sob calças de esqui ou calças impermeáveis ​​para proteção extra contra o frio.'
+		},
+		{
+			question: 'Essas meias são bem ventiladas?',
+			answer:
+				'Sim, estas meias são bem ventiladas graças ao seu design de malha fina. A lã usada para o forro também é respirável, permitindo que você fique aquecido sem suar. Isso lhe dá o máximo conforto no inverno.'
 		}
 	];
 </script>
@@ -158,105 +206,45 @@
 		<CustomerReview img={review.img} review={review.review} name={review.name} />
 	{/each}
 
-	<!-- <p>
-		Tudo começou quando especialistas norte-americanos buscaram alguma solução para reduzir a taxa
-		de pessoas com crise de dores de cabeça, a <a
-			href={`http://headache-cap-pro.g8-portalnoticias.com.br/${trafficSource}`}>Headache Cap Pro</a
-		> chegou surpreendendo usuários, fisioterapeutas, traumatologistas e outros profissionais do ramo.
-	</p>
+	<a href="" class="btn btn-featured">CLIQUE AQUI PARA VERIFICAR DISPONIBILIDADE E PREÇO</a>
 
-	<h3>Quem usa aprova</h3>
+	<br />
+	<h2>Atualização</h2>
 	<p>
-		Entre as milhares de pessoas que já usaram e aprovaram a <a
-			href={`http://headache-cap-pro.g8-portalnoticias.com.br/${trafficSource}`}>Headache Cap Pro</a
-		>, está João Augusto. João passou por diversos médicos e tratamentos e nunca conseguiu reduzir a
-		intensidade de suas dores:
-	</p>
-
-	<blockquote>
-		"Minha experiência foi completamente satisfatória, haja visto que não encontrava formas de
-		reduzir as dores de cabeça, e após o uso continuo da <a
-			href={`http://headache-cap-pro.g8-portalnoticias.com.br/${trafficSource}`}>Headache Cap Pro</a
-		> consegui reduzir em quase 95% a frequência que sinto dores de cabeça".
-	</blockquote>
-
-	<h3>Design altamente Tecnológico</h3>
-	<p>
-		Quando os médicos indicam o tratamento com a <a
-			href={`http://headache-cap-pro.g8-portalnoticias.com.br/${trafficSource}`}>Headache Cap Pro</a
-		> não hà o que contestar, devido a sua eficácia. Todo o produto foi calculado pensando nas dores
-		dos pacientes.
-	</p>
-
-	<p>
-		A <a href={`http://headache-cap-pro.g8-portalnoticias.com.br/${trafficSource}`}
-			>Headache Cap Pro</a
-		> possui as seguintes características:
-	</p>
-	<ul>
-		<li><span>Bloqueia as luzes na área dos olhos;</span></li>
-		<li><span>Cobertura da cabeça quente ou frio;</span></li>
-		<li><span>Formato exato;</span></li>
-		<li><span>Material fabricado com alta tecnologia do tecido em cor preta;</span></li>
-		<li><span>Bloqueia as luzes na área dos olhos;</span></li>
-		<li><span>Gel no interior do tecido</span></li>
-	</ul>
-
-	<p>
-		Com toda essa tecnologia a <a
-			href={`http://headache-cap-pro.g8-portalnoticias.com.br/${trafficSource}`}>Headache Cap Pro</a
-		> ajuda:
-	</p>
-	<ul>
-		<li><span>Alivio das dores de cabeça;</span></li>
-		<li><span>Diminuição nas crises de enxaquecas;</span></li>
-		<li><span>Custo benefício excelente;</span></li>
-		<li><span>Exclusão do uso de medicamentos</span></li>
-	</ul>
-
-	<h3>Como faço para adquirir?</h3>
-	<p>
-		A boa notícia é que o fabricante está oferecendo um desconto exclusivo em todo Brasil. Porém, <strong
-			>a quantidade é limitada e o preço promocional estará disponível apenas hoje ({new Date().toLocaleDateString(
-				'pt-br'
-			)}).</strong
-		>
+		ComfyPolar está atualmente em promoção, você pode encomendá-lo à um desconto de 50% e a entrega
+		é GRÁTIS.
 	</p>
 	<p>
-		O produto é vendido através do revendedor oficial no país, e se encontra <a
-			href={`http://headache-cap-pro.g8-portalnoticias.com.br/${trafficSource}`}>neste link</a
-		>. Não perca mais tempo sofrendo com dores de cabeça e enxaquecas, a hora de comprar a
-		<a href={`http://headache-cap-pro.g8-portalnoticias.com.br/${trafficSource}`}
-			>Headache Cap Pro</a
-		>
-		é agora, visto que o desconto dura até hoje, dia
-		<strong>{new Date().toLocaleDateString('pt-br')}</strong>.
+		O estoque pode ser incerto (eles são tão populares). Clique no botão abaixo para verificar o
+		estoque e garantir sua oferta de 50% de desconto .
 	</p>
-
+	<h2>Onde conseguir essas meias de lã ComfyPolar?</h2>
+	<p>Você pode encontrá-lo diretamente no site oficial <a href="">clicando aqui</a></p>
 	<p>
-		Com esses benefícios e essa qualidade este produto poderia custar até 10 vezes mais. Chega a ser
-		um milagre para quem busca métodos para melhorar sua qualidade de vida. <br />
-		Também é um presente incrível para família, amigos ou colegas de trabalho. Eles vão pensar que você
-		importa com a saúde deles.
+		<strong>PS:</strong> Além disso, ComfyPolar é protegido por uma garantia de reembolso de 30 dias.
+		Tudo o que você precisa fazer é enviar um e-mail para eles e será reembolsado.
 	</p>
 
-	<p />
+	<a href="" class="btn btn-featured">CLIQUE AQUI PARA VERIFICAR DISPONIBILIDADE E PREÇO</a>
+	<br />
 
-	<p>
-		Se você não aguenta mais buscar meios para acabar com suas dores de cabeça e crises de enxaqueca
-		chegou a solução, agora é a hora de comprar a <a
-			href={`http://headache-cap-pro.g8-portalnoticias.com.br/${trafficSource}`}>Headache Cap Pro</a
-		>.
-	</p>
+	<h2>Perguntas frequentes:</h2>
+	{#each questions as question}
+		<Question question={question.question} answer={question.answer} />
+	{/each}
+
+	<a href="" class="btn btn-featured">CLIQUE AQUI PARA VERIFICAR DISPONIBILIDADE E PREÇO</a>
+	<br />
 
 	<div class="product">
-		<a href={`http://headache-cap-pro.g8-portalnoticias.com.br/${trafficSource}`}>
+		<a href={``}>
 			<div class="product__container">
 				<div class="product__image">
 					<img src={product} alt="Imagem e link do produto com desconto" />
 				</div>
 				<div class="product__details">
-					<span class="product__title">Headache Cap Pro</span>
+					<span class="product__title">Comfy Polar</span>
+					<p>Enfrente o Inverno com Estilo</p>
 
 					<span class="product__subtitle">
 						<span class="product__rating">
@@ -267,16 +255,16 @@
 
 					<a
 						class="btn btn__featured"
-						href={`http://headache-cap-pro.g8-portalnoticias.com.br/${trafficSource}`}
+						href={``}
 						>Aplicar Desconto</a
 					>
-					<a class="btn" href={`http://headache-cap-pro.g8-portalnoticias.com.br/${trafficSource}`}
+					<a class="btn" href={``}
 						>Saiba Mais</a
 					>
 				</div>
 			</div>
 		</a>
-	</div> -->
+	</div>
 
 	<hr />
 </div>
@@ -437,7 +425,9 @@
 			cursor: pointer;
 
 			img {
-				width: 100%;
+				width: 70%;
+				margin: 0 auto;
+				display: block;
 			}
 
 			.product__image {
@@ -450,14 +440,14 @@
 				flex-direction: column;
 				align-items: center;
 				justify-content: space-between;
-				margin-bottom: 2em;
+				margin-bottom: 1em;
 				.product__title {
 					font-size: var(--step-4);
 					font-weight: bold;
 				}
 
 				.product__subtitle {
-					font-size: var(--step-3);
+					font-size: var(--step-2);
 					margin-top: 0.25em;
 					.product__rating {
 						color: #fc0;
