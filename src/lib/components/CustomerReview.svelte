@@ -21,7 +21,7 @@
 	.customer-review {
 		background-color: #f4f4f4;
 		padding: 1rem;
-        margin: 2em;
+		margin: 2em;
 
 		img {
 			width: 50%;
@@ -48,5 +48,14 @@
 			font-size: var(--step-1);
 			font-weight: bold;
 		}
+	}
+
+	@media only screen and (min-width: 35rem) {
+        .customer-review {
+            width: 33.33%;
+            img {
+                width: 100%;
+            }
+        }
 	}
 </style>

@@ -202,9 +202,11 @@
 	</div>
 	<hr />
 
-	{#each reviews as review}
-		<CustomerReview img={review.img} review={review.review} name={review.name} />
-	{/each}
+	<div class="customer-reviews">
+		{#each reviews as review}
+			<CustomerReview img={review.img} review={review.review} name={review.name} />
+		{/each}
+	</div>
 
 	<a href="" class="btn btn-featured">CLIQUE AQUI PARA VERIFICAR DISPONIBILIDADE E PREÇO</a>
 
@@ -253,14 +255,8 @@
 						(857) avaliações
 					</span>
 
-					<a
-						class="btn btn__featured"
-						href={``}
-						>Aplicar Desconto</a
-					>
-					<a class="btn" href={``}
-						>Saiba Mais</a
-					>
+					<a class="btn btn__featured" href={``}>Aplicar Desconto</a>
+					<a class="btn" href={``}>Saiba Mais</a>
 				</div>
 			</div>
 		</a>
@@ -459,6 +455,12 @@
 					margin-top: 2rem;
 				}
 			}
+		}
+	}
+
+	@media only screen and (min-width: 35rem) {
+		.customer-reviews {
+			display: flex;
 		}
 	}
 </style>
